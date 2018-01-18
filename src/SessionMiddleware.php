@@ -15,6 +15,10 @@ use FastD\Middleware\Middleware;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
+/**
+ * Class SessionMiddleware
+ * @package FastD\Session
+ */
 class SessionMiddleware extends Middleware
 {
     /**
@@ -24,6 +28,8 @@ class SessionMiddleware extends Middleware
      */
     public function handle(ServerRequestInterface $request, DelegateInterface $next)
     {
+        Session::start(app()->get('request'));
+
         $response = $next->process($request);
 
         return $response->withCookie('session-id', session()->getSessionId());

@@ -13,6 +13,10 @@ namespace FastD\Session;
 use FastD\Container\Container;
 use FastD\Container\ServiceProviderInterface;
 
+/**
+ * Class SessionServiceProvider
+ * @package FastD\Session
+ */
 class SessionServiceProvider implements ServiceProviderInterface
 {
     /**
@@ -21,8 +25,6 @@ class SessionServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $container)
     {
-        app()->add('session', new Session());
-
         app()->get('dispatcher')->before(new SessionMiddleware());
     }
 }
