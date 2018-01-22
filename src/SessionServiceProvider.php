@@ -7,7 +7,7 @@
  * @see      http://www.fast-d.cn/
  */
 
-namespace FastD\Session;
+namespace FastD\SessionProvider;
 
 
 use FastD\Container\Container;
