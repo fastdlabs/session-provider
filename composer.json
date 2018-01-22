@@ -1,5 +1,6 @@
 {
     "name": "fastd/session-provider",
+    "license": "MIT",
     "authors": [
         {
             "name": "JanHuang",
