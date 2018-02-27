@@ -10,6 +10,7 @@
 namespace FastD\SessionProvider;
 
 
+use FastD\Http\Response;
 use FastD\Middleware\DelegateInterface;
 use FastD\Middleware\Middleware;
 use Psr\Http\Message\ResponseInterface;
@@ -32,6 +33,10 @@ class SessionMiddleware extends Middleware
 
         $response = $next->process($request);
 
-        return $response->withCookie('session-id', session()->getSessionId());
+        if ($response instanceof Response) {
+            return $response->withCookie('session-id', session()->getSessionId());
+        }
+
+        return $response;
     }
 }
