@@ -15,6 +15,7 @@ use FastD\Middleware\DelegateInterface;
 use FastD\Middleware\Middleware;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use FastD\Session\Session;
 
 /**
  * Class SessionMiddleware
