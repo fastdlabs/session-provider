@@ -35,7 +35,7 @@ class SessionMiddleware extends Middleware
         $response = $next->process($request);
 
         if ($response instanceof Response) {
-            return $response->withCookie('session-id', session()->getSessionId());
+            return $response->withCookie('session-id', session()->getSessionId(), null, '/');
         }
 
         return $response;
