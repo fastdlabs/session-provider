@@ -9,11 +9,14 @@
     ],
     "require": {
         "PHP": ">=5.6",
-        "fastd/session": "^0.1"
+        "fastd/session": "dev-master"
      },
     "autoload": {
         "psr-4": {
             "FastD\\SessionProvider\\": "src"
-        }
+        },
+        "files": [
+            "helpers.php"
+        ]
     }
 }
